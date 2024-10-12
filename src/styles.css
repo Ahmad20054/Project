@@ -1,1 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
+.card-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+  
+  .display-3 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #28a745;
+  }
+  
+  button {
+    border-radius: 25px;
+  }
+  
+  img.rounded-circle {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .carousel-inner img {
+    height: 400px;
+    object-fit: cover;
+  }
+  

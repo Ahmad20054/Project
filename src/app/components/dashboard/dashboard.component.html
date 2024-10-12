@@ -1,0 +1,59 @@
+<div class="container mt-5">
+    <!-- Cards Section for Vacation and Leave Requests -->
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="card text-center bg-light">
+          <div class="card-body">
+            <h5 class="card-title">Vacation Requests</h5>
+            <div class="display-3">{{ vacationRequestsCount }}</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="card text-center bg-light">
+          <div class="card-body">
+            <h5 class="card-title">Leave Requests</h5>
+            <div class="display-3">{{ leaveRequestsCount }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Employee Profiles and Vacation Requests -->
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="my-4">Employee Requests</h3>
+        <input type="text" [(ngModel)]="searchText" class="form-control mb-4" placeholder="Search by employee name">
+  
+        <div *ngFor="let request of vacationRequests | filter: searchText" class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-3 text-center my-auto">
+              <img src="assets/profile-placeholder.png" class="img-fluid rounded-circle" alt="Employee Image" style="width: 100px;">
+            </div>
+            <div class="col-md-6">
+              <div class="card-body">
+                <h5 class="card-title">{{ request.employeeName }}</h5>
+                <p class="card-text">Duration: {{ request.duration }}</p>
+                <p class="card-text">Submitted on: {{ request.submittedOn }}</p>
+                <p class="card-text">Status: {{ request.status }}</p>
+              </div>
+            </div>
+            <div class="col-md-3 text-center my-auto">
+              <button class="btn btn-outline-success mb-2">Approve</button>
+              <button class="btn btn-outline-danger">Decline</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Pagination -->
+    <pager></pager>
+  </div>
+  
+  <input type="text" [(ngModel)]="searchText" class="form-control" placeholder="Search by employee name">
+<div *ngFor="let request of vacationRequests | filter: searchText">
+  <!-- Display request data here -->
+</div>
+
+  
